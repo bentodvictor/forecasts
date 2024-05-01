@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Forecasts.Server.props" />
+</Project>

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "mNUbzBvvtCpSy8RGu/54/B1JUw7BO+vxIisx+NiQqS/vsoAN3/63LMy8GOLFZrYGOgnVBs6O+Vhl/uaIFxixyw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tetra Pak\\dev_stuff\\forecasts\\Forecasts\\Forecasts.Server\\Forecasts.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\6.0.29\\microsoft.aspnetcore.spaproxy.6.0.29.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Tetra Pak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
