@@ -10,13 +10,32 @@ interface Forecast {
 }
 
 function App() {
-    const [forecasts, setForecasts] = useState<Forecast[]>();
+    const [forecasts, setForecasts] = useState<Forecast[]>([]);
+    const [search, setSearch] = useState<string>('');
+
+    // Filter forecast 
+    const filteredForecasts = search.length > 0
+        ? forecasts.filter(f => f.summary.toLowerCase().includes(search.toLowerCase()))
+        : forecasts;
+
+    // State Handler for search field
+    const searchHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        setSearch(e.target.value);
+    }
+
+    // Function to populate weather data
+    const populateWeatherData = async () => {
+        const response = await fetch('weatherforecast');
+        const data = await response.json();
+        setForecasts(data);
+    }
 
     useEffect(() => {
         populateWeatherData();
     }, []);
 
-    const contents = forecasts === undefined
+
+    const contents = forecasts.length <= 0
         ? <p><em>Loading... </em></p>
         : <table className="table table-striped" aria-labelledby="tabelLabel">
             <thead>
@@ -29,12 +48,12 @@ function App() {
                 </tr>
             </thead>
             <tbody>
-                {forecasts.map(forecast =>
+                {filteredForecasts.map(forecast =>
                     <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.temperatureK}</td>
+                        <td>{new Date(forecast.date).toString()}</td>
+                        <td>{forecast.temperatureC.toFixed(2)}</td>
+                        <td>{forecast.temperatureF.toFixed(2)}</td>
+                        <td>{forecast.temperatureK.toFixed(2)}</td>
                         <td>{forecast.summary}</td>
                     </tr>
                 )}
@@ -44,17 +63,11 @@ function App() {
     return (
         <div>
             <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
+            <label form="search"></label>
+            <input type="text" name="search" placeholder="Search..." value={search} onChange={searchHandler}></input>
             {contents}
-        </div>
+        </div >
     );
-
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        console.log(data)
-        setForecasts(data);
-    }
 }
 
 export default App;
